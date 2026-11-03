@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5efe7">
+<title>100 Reasons — Maanya</title>
+<style>
+:root{--paper:#edf5fa;--paper2:#fbfdff;--ink:#183247;--muted:#587083;--rose:#397da3;--line:#cbdde8;--white:#fff;--shadow:0 18px 50px rgba(28,67,91,.10)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button{font:inherit;cursor:pointer}.serif{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.035em}
+.topbar{max-width:1100px;margin:auto;padding:22px 26px;display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+.topbar .mark{color:var(--rose);font-family:Georgia,serif;font-size:18px;letter-spacing:0;text-transform:none}
+main{max-width:1100px;margin:auto;padding:12px 26px 90px}
+.hero{min-height:70vh;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:45px 0 65px}
+.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--rose);font-weight:650}
+h1{font-size:clamp(54px,8vw,104px);line-height:.94;margin:22px 0 24px}
+.hero p{font-family:Georgia,serif;font-size:21px;line-height:1.55;color:#587083;max-width:470px}
+.hero-note{font-size:12px;color:var(--muted);margin-top:28px}
+.primary,.secondary{border:0;padding:15px 22px;background:var(--ink);color:white;border-radius:3px;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.secondary{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.hero-art{min-height:390px;background:radial-gradient(circle at 50% 42%,#fff 0,#eaf6fc 38%,#cfe4f0 100%);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid #c5dce9}
+.hero-art:before,.hero-art:after{content:"";position:absolute;border:1px solid rgba(77,145,180,.38);border-radius:50%;width:310px;height:310px}
+.hero-art:after{width:230px;height:230px}
+.art-word{font-family:Georgia,serif;font-size:clamp(45px,6vw,72px);font-style:italic;color:#397da3;z-index:1;transform:rotate(-8deg)}
+.art-caption{position:absolute;bottom:24px;right:25px;color:#587b91;font-size:10px;letter-spacing:.18em;text-transform:uppercase}
+.intro-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:12px}
+.section-head{display:flex;justify-content:space-between;align-items:end;margin:75px 0 24px;gap:20px}
+.section-head h2{font:400 clamp(34px,5vw,54px)/1 Georgia,serif;margin:10px 0 0;letter-spacing:-.035em}
+.section-head p{max-width:330px;color:var(--muted);font-size:13px;line-height:1.6}
+.chapter-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.chapter{background:var(--paper2);border:1px solid var(--line);padding:23px 24px;min-height:130px;text-align:left;display:flex;flex-direction:column;justify-content:space-between;transition:.2s;box-shadow:0 0 0 transparent}
+.chapter:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#91b8ce}
+.chapter .num{font-size:10px;letter-spacing:.16em;color:var(--rose)}
+.chapter strong{font:400 25px Georgia,serif;display:block;margin:14px 0 5px}
+.chapter small{font-size:11px;color:var(--muted)}
+.workspace{margin-top:70px;display:none}
+.workspace.active{display:block}
+.chapter-top{display:flex;justify-content:space-between;align-items:start;gap:20px;border-bottom:1px solid var(--line);padding-bottom:20px}
+.chapter-top h2{font:400 clamp(34px,5vw,54px)/1 Georgia,serif;margin:10px 0}
+.chapter-top p{color:var(--muted);font-size:13px}
+.progress-wrap{min-width:140px;text-align:right;color:var(--muted);font-size:11px}
+.progress{height:3px;background:#e4d8cd;margin-top:10px;width:140px}.progress span{height:100%;display:block;background:var(--rose);width:0;transition:width .3s}
+.reason-area{max-width:680px;margin:45px auto 0}
+.reason-card{min-height:310px;background:var(--paper2);border:1px solid var(--line);box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:45px clamp(22px,7vw,70px);position:relative}
+.reason-card:before{content:"";position:absolute;inset:12px;border:1px solid #e3eef5;pointer-events:none}
+.reason-count{color:var(--rose);font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+.reason-text{font:400 clamp(25px,4vw,38px)/1.35 Georgia,serif;margin:24px 0;max-width:560px}
+.reason-aside{font-size:11px;color:var(--muted);font-style:italic;min-height:16px}
+.controls{display:flex;align-items:center;justify-content:space-between;margin-top:18px;gap:10px}
+.controls button{padding:12px 16px;border:1px solid var(--line);background:transparent;color:var(--ink);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.controls .next{background:var(--ink);color:white;border-color:var(--ink)}
+.controls button:disabled{opacity:.35;cursor:not-allowed}
+.chapter-footer{display:flex;justify-content:space-between;margin-top:24px;gap:12px}
+.chapter-footer button{border:0;background:none;color:var(--rose);font-size:12px;text-decoration:underline;text-underline-offset:4px}
+.inside{margin-top:90px;padding:36px;background:linear-gradient(135deg,#e2f0f7,#f8fcff);border:1px solid var(--line)}
+.inside h2{font:400 42px Georgia,serif;margin:10px 0}
+.inside p{color:#587083;line-height:1.65;max-width:650px;font-size:14px}
+.jokes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:24px}
+.joke{background:rgba(255,255,255,.78);padding:20px;border:1px solid rgba(77,145,180,.2);font:italic 20px Georgia,serif;color:#356d8e}
+.letter{margin:90px auto 0;max-width:720px;padding:45px clamp(22px,7vw,65px);background:var(--paper2);border:1px solid var(--line);box-shadow:var(--shadow);display:none}
+.letter.show{display:block}
+.letter h2{font:italic 42px Georgia,serif;color:var(--rose);margin:12px 0 30px}
+.letter p{font:18px/1.8 Georgia,serif;color:#554942}
+.signature{text-align:right;font:italic 24px Georgia,serif;color:var(--rose);margin-top:35px}
+.footer{text-align:center;color:var(--muted);font-size:11px;margin-top:65px;letter-spacing:.08em}
+.music{border:1px solid var(--line);background:transparent;padding:9px 12px;color:var(--muted);font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+.backtop{color:var(--rose);font-size:12px;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+@media(max-width:700px){.topbar{padding:17px 18px}main{padding:0 18px 65px}.hero{grid-template-columns:1fr;gap:25px;padding:38px 0 45px;min-height:auto}.hero-art{min-height:250px;grid-row:1}.hero-copy{grid-row:2}.hero p{font-size:18px}.intro-strip{font-size:10px}.chapter-grid{grid-template-columns:1fr}.chapter{min-height:110px}.section-head{margin-top:55px;display:block}.section-head p{margin-top:14px}.chapter-top{display:block}.progress-wrap{text-align:left;margin-top:18px}.progress{width:100%}.reason-card{min-height:290px}.controls button{padding:12px 10px;font-size:10px}.inside{padding:25px 20px}.jokes{grid-template-columns:1fr}.letter{margin-top:60px;padding:32px 23px}.letter h2{font-size:35px}.letter p{font-size:16px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+.snow{position:fixed;top:-20px;z-index:5;pointer-events:none;color:#78a9c4;opacity:.55;animation:fall linear infinite;text-shadow:0 0 8px white}@keyframes fall{to{transform:translateY(110vh) rotate(180deg)}}.frozen-tag{display:inline-block;color:#397da3;font-size:10px;letter-spacing:.15em;text-transform:uppercase;margin-top:12px}.theme-note{font:italic 14px/1.5 Georgia,serif;color:#397da3;background:#eef7fc;border-left:2px solid #83b5d0;padding:10px 13px;margin-top:18px;max-width:520px}.final-gate{display:none;text-align:center;margin:55px auto 0;padding:30px 20px;max-width:680px;background:#f8fcff;border:1px solid var(--line)}.final-gate.show{display:block}.final-gate p{color:var(--muted);font:17px Georgia,serif;line-height:1.6}@media(max-width:700px){.hero-art{min-height:250px}}\n
+/* Readability fixes: keep every chapter title and letter line dark on ice-white. */
+.chapter, .chapter strong, .chapter .num, .chapter small { color: #123451 !important; }
+.chapter strong { text-shadow: none !important; }
+.letter, .letter h2, .letter p, .letter .signature { color: #123451 !important; }
+.letter p { color: #183247 !important; }
+.letter h2, .letter .signature { color: #245d82 !important; }
+.final-gate h2, .final-gate p { color: #123451 !important; }
+
+</style>
+</head>
+<body>
+<header class="topbar"><span class="mark">a little winter magic</span><span>For Maanya · From the person on the opposite side of the phone</span><button class="music" id="musicBtn" aria-pressed="false" type="button">♫ Play the music</button><span id="musicStatus" aria-live="polite" style="font-size:10px;color:#245d82">Tap Play the music to start</span>
+<audio id="letItGoTrack" preload="auto" src="assets/let-it-go.mp3"></audio>
+<audio id="greatThawTrack" preload="auto" src="assets/great-thaw.mp3"></audio></header>
+<main>
+<section class="hero" id="home">
+  <div class="hero-copy">
+    <div class="eyebrow">A little winter-magic birthday surprise</div>
+    <h1 class="serif">Hey,<br><i>Maanya.</i></h1>
+    <p>I made you a little something. 100 things I've noticed, remembered, laughed about, and loved about you. Consider this your own little corner of Arendelle.</p>
+    <button class="primary" id="beginBtn">Open your surprise&nbsp; ↗</button>
+    <div class="hero-note">Take your time. There are ten little chapters.</div><div class="frozen-tag">❄ a little Elsa magic · a little Trusova determination ❄</div>
+  </div>
+  <div class="hero-art"><div class="art-word">let it glow</div><div class="art-caption">A LITTLE FROST · A LOT OF LOVE</div></div>
+</section>
+<div class="intro-strip"><span>MADE WITH THOUGHT</span><span>100 REASONS · 10 CHAPTERS · ONE MAANYA</span><span>JUST FOR YOU</span></div>
+
+<section id="chapters">
+  <div class="section-head"><div><div class="eyebrow">The collection</div><h2>A little magic, in chapters.</h2></div><p>Pick a chapter and open each reason one at a time. A little Elsa sparkle, a little skating-rink energy, and a whole lot of you.</p></div>
+  <div class="chapter-grid" id="chapterGrid"></div>
+</section>
+
+<section class="workspace" id="workspace">
+  <div class="chapter-top"><div><div class="eyebrow" id="chapterEyebrow">CHAPTER 01</div><h2 id="chapterTitle"></h2><p id="chapterDesc"></p></div><div class="progress-wrap"><span id="progressLabel">0 / 10 opened</span><div class="progress"><span id="progressBar"></span></div></div></div>
+  <div class="reason-area">
+    <div class="reason-card"><div class="reason-count" id="reasonCount"></div><div class="reason-text" id="reasonText"></div><div class="reason-aside" id="reasonAside"></div></div>
+    <div class="controls"><button id="prevBtn">← Previous</button><span id="stepLabel" style="font-size:11px;color:var(--muted)">1 of 10</span><button class="next" id="nextBtn">Next reason →</button></div>
+    <div class="chapter-footer"><button id="backBtn">← All chapters</button><button id="nextChapterBtn">Next chapter →</button></div>
+  </div>
+</section>
+
+<section class="inside" id="inside">
+  <div class="eyebrow">A little bonus</div><h2>Our own little Arendelle.</h2>
+  <p>Some things don't need a long explanation. They're funny because they're ours. And honestly, I wouldn't trade these little moments.</p>
+  <div class="jokes"><div class="joke">“we're cooked”</div><div class="joke">Our little teasing moments</div><div class="joke">Who loves the other more?</div></div>
+</section>
+
+<section class="final-gate" id="finalGate"><div class="eyebrow">You made it through all 100</div><h2 class="serif" style="font-size:38px;margin:12px 0">One last thing, Maanya.</h2><p>The reasons are over. But I saved one more little note just for you.</p><button class="primary" id="finalNoteBtn">Open the final note ↗</button></section>
+<section class="letter" id="letter">
+  <div class="eyebrow">Before you go</div>
+  <h2>And if 100 reasons weren't enough...</h2>
+  <p>Maanya,</p>
+  <p>I could probably write another hundred reasons, and I still don't think that would be enough.</p>
+  <p>But there's one thing I really want you to know. I never want you to feel like you have to earn my love by being a certain way.</p>
+  <p>You don't have to be funny every day, you don't have to be happy all the time, you don't have to look pretty every second, and you definitely don't have to have everything figured out.</p>
+  <p>I want all of you. The talkative you, the sleepy you, the dramatic you, the stubborn you, the silly you, the happy you, and even the you who has absolutely no idea what she's doing.</p>
+  <p>I want the random calls, the endless yapping, the silly arguments, the little disagreements, the laughter and all the ordinary moments in between.</p>
+  <p>I hope you never stop being yourself around me.</p>
+  <h2 style="margin-top:34px">Happy Birthday, Maanya.</h2>
+  <p>I love you more than these 100 reasons could ever explain.</p>
+  <div class="signature">— The person on the opposite side of the phone</div>
+</section>
+<div class="footer">A LITTLE WORLD OF ICE, MEMORIES & YOU. MADE BY THE PERSON ON THE OPPOSITE SIDE OF THE PHONE.</div>
+</main>
+<script>
+for(let i=0;i<18;i++){const s=document.createElement('span');s.className='snow';s.textContent='❄';s.style.left=(Math.random()*100)+'vw';s.style.fontSize=(10+Math.random()*13)+'px';s.style.animationDuration=(13+Math.random()*16)+'s';s.style.animationDelay=(-Math.random()*22)+'s';document.body.appendChild(s)}
+const chapters = [
+{title:"The Little Things About You",desc:"Your calls, your yapping, your expressions, and all the tiny things that make you you.",reasons:[
+["I love you simply because you're Maanya."],
+["I love how you always come up with the most unexpected replies to my questions."],
+["I love how you call me whenever you have something to tell me."],
+["I love your random yapping. I genuinely don't think I'll ever get tired of listening to you."],
+["I love how expressive you are, even through your texts."],
+["I love your dramatic reactions to the smallest things."],
+["I love how you can be so innocent one moment and get angry with me the next."],
+["I love how you scold me, even for the smallest things."],
+["I love those faint little sounds you make when you're thinking about something."],
+["I love how you make even the most meaningless conversations memorable."]]},
+{title:"Your Personality",desc:"The ambition, the opinions, the stubbornness. Yes, all of it.",reasons:[
+["I love how the fact that you have ego to become better (so hot)."],
+["I love that you have your own opinions and aren't afraid to express them."],
+["I love how hard you work towards the things you want and the goals you set for yourself."],
+["I love how you ask me to explain things instead of pretending you already know them."],
+["I love how straightforward you are."],
+["I love how stubborn you can be sometimes (no, all the time), even when you're clearly wrong. 😂"],
+["I love how serious and responsible you are when it comes to life."],
+["I love your playful side."],
+["I love how you can go from being completely silly to having the deepest conversations."],
+["I love that there's always something new I get to discover about you."]]},
+{title:"The Way You Make Me Feel",desc:"The notifications, the comfort, and how close we've become.",reasons:[
+["I love how seeing your notification can instantly change my mood. I love those notifications way too much."],
+["I love how talking to you makes even my most tiring days better."],
+["I love how comfortable I feel being myself around you."],
+["I love how I can talk to you about the most random things without thinking twice."],
+["I love how you make me smile without even trying."],
+["I love how you make even the most ordinary moments feel special."],
+["I love how I randomly find myself thinking about you even when we're not talking."],
+["I love how close we've become over the past few months."],
+["I love how completely unhinged I can be around you."],
+["I love how lucky you make me feel just by being in my life."]]},
+{title:"The Little Things I Notice About You",desc:"A few details that might seem small to you, but never go unnoticed by me.",reasons:[
+["I love how excited you get when talking about things you genuinely like."],
+["I love how much you loved the Aincrad arc in Sword Art Online."],
+["I love how you can defend something you love even when everyone else criticises it. ( this is amazing.)"],
+["I love how you randomly share reels and videos with me."],
+["I love how excited you get about your nails."],
+["I love how pretty you've been looking the past few days (not that you weren't pretty but nowadays a lil more)."],
+["I love how much you care about the little aesthetic details."],
+["I love how you can completely get lost in your own world."],
+["I love how you sometimes switch off your notifications and disappear into your own little world. ( I really need to learn from you.)"],
+["I love how you share even the smallest updates about your day with me."]]},
+{title:"Your Heart",desc:"The parts of you that show up in the way you care, remember, and try.",reasons:[
+["I love how deeply you care about the people who matter to you."],
+["I love how much your childhood memories mean to you."],
+["I love how you put in genuine effort to change yourself and become better."],
+["I love how you remember people and the little things associated with them."],
+["I love how openly you tell me when something is bothering you."],
+["I love that you don't have to pretend to be happy around me."],
+["I love how you appreciate even the smallest things someone does for you."],
+["I love how you make sure I know when something I've done has made you happy."],
+["I love how you trust me with things that are personal to you."],
+["I love how much you value feeling safe and comfortable with someone."]]},
+{title:"The Way You Love",desc:"The little ways you say it, show it, and make sure I know.",reasons:[
+["I love how you tell me you love me without waiting for a special occasion."],
+["I love how we compete over who loves the other more."],
+["I love those random texts where you suddenly tell me you miss me."],
+["I love how you want me to show you that I love you, and not just say it."],
+["I love how you tell me when something makes you feel special."],
+["I love how much you appreciate even the little efforts I make."],
+["I love how you remind me that I matter to you."],
+["I love how you make me feel that my presence makes a difference."],
+["I love how you say you'll keep me happy."],
+["I love how effortlessly affectionate you can be."]]},
+{title:"Our Little World",desc:"The late nights, the jokes, the teasing, and the things that are just ours.",reasons:[
+["I love our late-night conversations that somehow go on much longer than we originally planned. (we're cooked)"],
+["I love how we can go from discussing something serious to making the most ridiculous jokes."],
+["I love all our little inside jokes."],
+["I love how we tease each other over the smallest things."],
+["I love our little teasing moments and how neither of us ever wants to stop."],
+["I love how we can talk about anime, college, life and absolutely nothing, all in the same conversation."],
+["I love how you share your random thoughts with me."],
+["I love how you remember things I've told you, even when I've completely forgotten mentioning them."],
+["I love how even our arguments have become memories I wouldn't want to erase. (so happy we overcame them)"],
+["I love how we've created our own little world of words, jokes and expressions."]]},
+{title:"Things I Admire About You",desc:"Your drive, your independence, and how much you take on.",reasons:[
+["I love how seriously you take your studies when you sit down to focus."],
+["I love how much effort you put into all your projects. I genuinely admire that about you."],
+["I love how you try to finish your work even when you're tired, while still making time to talk to me."],
+["I love how you ask questions whenever you genuinely want to understand something."],
+["I love how responsible you are, especially when it comes to things that matter."],
+["HOW RESPONSIBLE YOU ARE WHEN IT COMES TO MONEY (insane)."],
+["I love how passionate you get about the things you care about. It's so attractive."],
+["I love how you remember little details from conversations we had days ago."],
+["How you work and take care of your brothers and the house when you're at home."],
+["I love how there's so much more to you than what someone sees at first glance."]]},
+{title:"The Things That Make You Special to Me",desc:"The smile, the hands, the expressions. The details I keep remembering.",reasons:[
+["I love your beautiful hands."],
+["I love your smile. I honestly wish I got to see it more often."],
+["I love those little expressions you make when you're embarrassed."],
+["I love how you sometimes get all shy when I compliment you. (And the blushing today was something else shoudlve seen ur face.)"],
+["I love how pretty you looked with your nails and mehendi."],
+["I love how you can make me forget what I was doing just by being on my mind."],
+["I love how your name has become one of my favourite notifications."],
+["I love how I remember the random things you tell me simply because they're important to me."],
+["I love how you make me want to capture more and more moments with you."],
+["I love how even the smallest things about you somehow stay in my head."]]},
+{title:"And Finally, The Biggest Reasons",desc:"A few things I hope you remember, even after you've closed this page.",reasons:[
+["I love you because I don't need you to be perfect to love you."],
+["I love that you can be completely yourself around me, and I hope you always feel that way."],
+["I love you because I want to be there for your happiest moments and your difficult ones too."],
+["I love you because I want to support you in everything you dream of doing."],
+["I love you because I want to keep discovering new things about you, even years from now."],
+["I love you because I want to experience all the ordinary days with you, not just the special occasions."],
+["I love you because doing little things that make you happy makes me happy too."],
+["I love you because I don't just love the moments when everything is perfect. I love our imperfect moments too, even our arguments."],
+["I love you because, out of all the people I could spend my time with, you're the person I want to keep choosing."],
+["I love you simply because you're Maanya. And there's no one else I'd rather have as my Maanya."]]}
+];
+const grid=document.getElementById('chapterGrid'),workspace=document.getElementById('workspace');
+let current=0,step=0,opened=new Set();
+chapters.forEach((c,i)=>{const b=document.createElement('button');b.className='chapter';b.innerHTML=`<span class="num">CHAPTER ${String(i+1).padStart(2,'0')} · REASONS ${i*10+1}–${i*10+10}</span><strong>${c.title}</strong><small>Open this chapter ↗</small>`;b.addEventListener('click',()=>openChapter(i));grid.appendChild(b)});
+function openChapter(i){current=i;step=0;workspace.classList.add('active');document.getElementById('chapterEyebrow').textContent=`CHAPTER ${String(i+1).padStart(2,'0')} · REASONS ${i*10+1}–${i*10+10}`;document.getElementById('chapterTitle').textContent=chapters[i].title;document.getElementById('chapterDesc').textContent=chapters[i].desc;render();workspace.scrollIntoView({behavior:'smooth',block:'start'})}
+function render(){const c=chapters[current],r=c.reasons[step],n=current*10+step+1;document.getElementById('reasonCount').textContent=`REASON ${String(n).padStart(2,'0')}`;document.getElementById('reasonText').textContent=r[0];const themed={
+9:"A tiny Elsa moment — even your quiet little thinking sounds have their own kind of magic.",
+13:"That drive to become better? A little Alexandra Trusova energy: ambitious, determined, and never afraid of a challenge.",
+16:"Even Elsa couldn't thaw that level of stubbornness. (And yes, I still think you're wrong sometimes.)",
+31:"When you love something, you light up like Elsa stepping into her ice palace.",
+33:"You defend the things you love with the confidence of someone landing a quadruple jump. Very Trusova-coded.",
+36:"Not saying you're turning into Elsa, but the glow has been giving ice-queen energy lately.",
+39:"Your disappearing act is stronger than Elsa running away to the North Mountain. I still need to learn that skill.",
+61:"Our sleep schedule is somewhere between an endless winter and a very questionable decision. We're cooked.",
+71:"The focus you bring to your work reminds me of the discipline behind Alexandra Trusova's skating.",
+77:"That passion is your own kind of superpower. Elsa has ice; you have that determination.",
+94:"Whatever you dream of doing, I hope you go after it with the fearless energy of a skater going for a big jump."
+};
+document.getElementById('reasonAside').textContent=themed[n]||'';document.getElementById('stepLabel').textContent=`${step+1} of 10`;document.getElementById('prevBtn').disabled=step===0;document.getElementById('nextBtn').textContent=step===9?'Chapter complete ✓':'Next reason →';document.getElementById('nextBtn').disabled=step===9;document.getElementById('progressLabel').textContent=`${opened.size} / 100 opened`;document.getElementById('progressBar').style.width=`${opened.size}%`;opened.add(n);document.getElementById('progressLabel').textContent=`${opened.size} / 100 opened`;document.getElementById('progressBar').style.width=`${opened.size}%`;document.getElementById('nextChapterBtn').textContent=current===9?'Go to the letter ↓':'Next chapter →';if(opened.size===100)document.getElementById('finalGate').classList.add('show')}
+document.getElementById('beginBtn').onclick=()=>document.getElementById('chapters').scrollIntoView({behavior:'smooth'});
+document.getElementById('finalNoteBtn').onclick=()=>{document.getElementById('letter').classList.add('show');document.getElementById('letter').scrollIntoView({behavior:'smooth'})};
+document.getElementById('prevBtn').onclick=()=>{if(step>0){step--;render()}};
+document.getElementById('nextBtn').onclick=()=>{if(step<9){step++;render()}};
+document.getElementById('backBtn').onclick=()=>document.getElementById('chapters').scrollIntoView({behavior:'smooth'});
+document.getElementById('nextChapterBtn').onclick=()=>{if(current<9)openChapter(current+1);else{document.getElementById('finalGate').classList.add('show');document.getElementById('finalGate').scrollIntoView({behavior:'smooth'})}};
+const musicBtn=document.getElementById('musicBtn');
+const tracks=[document.getElementById('letItGoTrack'),document.getElementById('greatThawTrack')];
+let musicOn=false,activeTrack=0,fadeTimer=null,fadeStarted=false;
+const FADE_SECONDS=7;
+function beginTrack(index){activeTrack=index;fadeStarted=false;const current=tracks[index];current.volume=1;current.currentTime=0;current.play().then(()=>{const status=document.getElementById('musicStatus');if(status)status.textContent=index===0?'Playing Let It Go':'Playing The Great Thaw';}).catch((err)=>{musicOn=false;musicBtn.textContent='♫ Play the music';musicBtn.setAttribute('aria-pressed','false');const status=document.getElementById('musicStatus');if(status)status.textContent='Music could not start. Extract the ZIP and open index.html in Chrome.';console.error('Audio playback failed:',err);});}
+function crossfade(){if(!musicOn||fadeStarted)return;fadeStarted=true;const outgoing=tracks[activeTrack],incoming=tracks[1-activeTrack];incoming.currentTime=0;incoming.volume=0;incoming.play().catch(()=>{});const start=Date.now(),duration=FADE_SECONDS*1000;clearInterval(fadeTimer);fadeTimer=setInterval(()=>{if(!musicOn){clearInterval(fadeTimer);return}const t=Math.min(1,(Date.now()-start)/duration);outgoing.volume=Math.max(0,1-t);incoming.volume=Math.min(1,t);if(t>=1){clearInterval(fadeTimer);outgoing.pause();activeTrack=1-activeTrack;fadeStarted=false;}},100);}
+tracks.forEach((track,index)=>{track.addEventListener('timeupdate',()=>{if(musicOn&&index===activeTrack&&Number.isFinite(track.duration)&&track.duration-track.currentTime<=FADE_SECONDS)crossfade()});track.addEventListener('ended',()=>{if(musicOn&&index===activeTrack&&!fadeStarted){const next=tracks[1-index];next.volume=1;beginTrack(1-index)}})});
+function stopMusic(){clearInterval(fadeTimer);tracks.forEach(t=>{t.pause();t.currentTime=0;t.volume=1});fadeStarted=false;}
+musicBtn.onclick=()=>{musicOn=!musicOn;musicBtn.setAttribute('aria-pressed',String(musicOn));musicBtn.textContent=musicOn?'Ⅱ Pause music':'♫ Play the music';const status=document.getElementById('musicStatus');if(musicOn)beginTrack(0);else{stopMusic();if(status)status.textContent='Music paused';}};
+</script>
+</body>
+</html>
